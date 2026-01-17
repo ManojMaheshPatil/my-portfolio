@@ -17,6 +17,11 @@
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li>
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+          </li>
         </ul>
       </div>
     </nav>
@@ -33,6 +38,9 @@
           <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <li>
+            <a href="javascript:void(0)" onclick="toggleTheme()" id="mobile-theme-toggle">Toggle Mode</a>
+          </li>
         </div>
       </div>
     </nav>
@@ -43,7 +51,7 @@
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Manoj Patil</h1>
-        <p class="section__text__p2">Software Engineer</p>
+        <p class="section__text__p2"><span class="typing-text"></span><span class="cursor">|</span></p>
         <div class="btn-container">
           <button
             class="btn btn-color-2"
@@ -78,13 +86,6 @@
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
       <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
         <div class="about-details-container">
           <div class="about-containers">
             <div class="details-container">
@@ -94,7 +95,7 @@
                 class="icon"
               />
               <h3>Experience</h3>
-              <p>3+ years <br />Software Engineer</p>
+              <p>4+ years <br />Software Engineer</p>
             </div>
             <div class="details-container">
               <img
@@ -111,14 +112,12 @@
           </div>
           <div class="text-container">
             <p>
-              Hey there👋 I'm Manoj. I'm currently working as a Senior Software
-              Engineer at Eli Lilly (Client) for ACL Digital. Having
-              3+ years of industry experience in MNC's like Genpact & IBM , I am deeply passionate about
-              designing and developing websites and applications that address
-              real-world challenges and deliver tangible benefits. I love
-              building websites/apps that have real world use cases. I am open
-              to opportunities for collaboration, discussion, and innovation.
-              Please feel free to contact me using the details listed below.
+              Hey there👋 I'm Manoj. I'm currently working as a Fullstack Developer at Eli Lilly (Jan 2025 - Present). 
+              I recently concluded my tenure at Genpact in December 2025. 
+              Having over 4 years of industry experience in MNCs like Eli Lilly, Genpact, and IBM, 
+              I am deeply passionate about designing and developing scalable applications that address 
+              real-world challenges and deliver tangible benefits. I love building products with 
+              modern architectures like event-driven microservices.
             </p>
           </div>
         </div>
@@ -136,7 +135,36 @@
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
+            <h2 class="experience-sub-title">Professional Experience</h2>
+            <div class="experience-list">
+              <div class="experience-item">
+                <h3>Eli Lilly</h3>
+                <p class="role">Fullstack Developer | Jan 2025 - Present</p>
+                <p class="description">
+                  Currently leading two projects from scratch to MVP. Developed 
+                  robust full-stack solutions using React.js, Python, and AWS. 
+                  Built the MVP with an event-driven microservices architecture.
+                </p>
+              </div>
+              <div class="experience-item">
+                <h3>Genpact</h3>
+                <p class="role">Software Engineer | July 2022 - Dec 2025</p>
+                <p class="description">
+                  Contributed to high-impact software solutions and collaborated with 
+                  global teams to deliver scalable enterprise applications.
+                </p>
+              </div>
+              <div class="experience-item">
+                <h3>IBM</h3>
+                <p class="role">Software Engineer | Jan 2022 - June 2022</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-containers">
+          <div class="details-container">
             <h2 class="experience-sub-title">Frontend Development</h2>
+
             <div class="article-container">
               <article>
                 <img
@@ -260,6 +288,17 @@
                   class="icon"
                 />
                 <div>
+                  <h3>AWS</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
                   <h3>SQL</h3>
                   <p>Experienced</p>
                 </div>
@@ -271,7 +310,7 @@
                   class="icon"
                 />
                 <div>
-                  <h3>Flask</h3>
+                  <h3>FastAPI</h3>
                   <p>Intermediate</p>
                 </div>
               </article>
@@ -282,7 +321,7 @@
                   class="icon"
                 />
                 <div>
-                  <h3>Firebase</h3>
+                  <h3>NoSQL</h3>
                   <p>Intermediate</p>
                 </div>
               </article>
@@ -417,7 +456,7 @@
           </ul>
         </div>
       </nav>
-      <p>Copyright &#169; 2024 Manoj Patil. All Rights Reserved.</p>
+      <p>Copyright &#169; 2026 Manoj Patil. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
   </body>
