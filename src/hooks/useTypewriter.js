@@ -1,60 +1,59 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 
 const roles = [
-  { text: "Building Scalable Systems", gradient: "linear-gradient(135deg, #3b82f6, #8b5cf6)" },
-  { text: "Exploring AI", gradient: "linear-gradient(135deg, #f43f5e, #ec4899)" },
-  { text: "Designing Interfaces", gradient: "linear-gradient(135deg, #0ea5e9, #10b981)" },
-  { text: "Watching Movies", gradient: "linear-gradient(135deg, #f59e0b, #d97706)" },
-  { text: "Playing Games", gradient: "linear-gradient(135deg, #a855f7, #d946ef)" }
+{ text: "I build things for the web", color: "#ff6b5e" },
+{ text: "Backend, frontend, whatever it takes", color: "#2ec4b6" },
+{ text: "Professional bug fixer", color: "#7b6ef6" },
+{ text: "Powered by chai", color: "#f59e0b" }
 ]
 
 export function useTypewriter() {
-  const [displayText, setDisplayText] = useState('')
-  const [gradient, setGradient] = useState(roles[0].gradient)
-  
-  const roleIndexRef = useRef(0)
-  const charIndexRef = useRef(0)
-  const isDeletingRef = useRef(false)
-  const timeoutRef = useRef(null)
+const [displayText, setDisplayText] = useState('')
+const [color, setColor] = useState(roles[0].color)
 
-  const typeWriter = useCallback(() => {
-    const currentRole = roles[roleIndexRef.current]
-    let typeSpeed
+const roleIndexRef = useRef(0)
+const charIndexRef = useRef(0)
+const isDeletingRef = useRef(false)
+const timeoutRef = useRef(null)
 
-    if (!isDeletingRef.current && charIndexRef.current === 0) {
-      setGradient(currentRole.gradient)
-    }
+const typeWriter = useCallback(() => {
+const currentRole = roles[roleIndexRef.current]
+let typeSpeed
 
-    if (isDeletingRef.current) {
-      charIndexRef.current--
-      setDisplayText(currentRole.text.substring(0, charIndexRef.current))
-      typeSpeed = 50
-    } else {
-      charIndexRef.current++
-      setDisplayText(currentRole.text.substring(0, charIndexRef.current))
-      typeSpeed = 100
-    }
+if (!isDeletingRef.current && charIndexRef.current === 0) {
+setColor(currentRole.color)
+}
 
-    if (!isDeletingRef.current && charIndexRef.current === currentRole.text.length) {
-      isDeletingRef.current = true
-      typeSpeed = 2000
-    } else if (isDeletingRef.current && charIndexRef.current === 0) {
-      isDeletingRef.current = false
-      roleIndexRef.current = (roleIndexRef.current + 1) % roles.length
-      typeSpeed = 500
-    }
+if (isDeletingRef.current) {
+charIndexRef.current--
+setDisplayText(currentRole.text.substring(0, charIndexRef.current))
+typeSpeed = 50
+} else {
+charIndexRef.current++
+setDisplayText(currentRole.text.substring(0, charIndexRef.current))
+typeSpeed = 100
+}
 
-    timeoutRef.current = setTimeout(typeWriter, typeSpeed)
-  }, [])
+if (!isDeletingRef.current && charIndexRef.current === currentRole.text.length) {
+isDeletingRef.current = true
+typeSpeed = 2000
+} else if (isDeletingRef.current && charIndexRef.current === 0) {
+isDeletingRef.current = false
+roleIndexRef.current = (roleIndexRef.current + 1) % roles.length
+typeSpeed = 500
+}
 
-  useEffect(() => {
-    typeWriter()
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current)
-      }
-    }
-  }, [typeWriter])
+timeoutRef.current = setTimeout(typeWriter, typeSpeed)
+}, [])
 
-  return { displayText, gradient }
+useEffect(() => {
+typeWriter()
+return () => {
+if (timeoutRef.current) {
+clearTimeout(timeoutRef.current)
+}
+}
+}, [typeWriter])
+
+return { displayText, color }
 }
