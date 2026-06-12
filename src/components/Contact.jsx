@@ -1,32 +1,28 @@
 function Contact() {
-  return (
-    <section id="contact">
-      <p className="section__text__p1">Get in Touch</p>
-      <h1 className="title">Contact Me</h1>
-      <div className="contact-info-upper-container">
-        <div className="contact-info-container">
-          <img
-            src="/assets/email.png"
-            alt="Email icon"
-            className="icon contact-icon email-icon"
-          />
-          <p>
-            <a href="mailto:patil.mahesh.manoj@gmail.com">patil.mahesh.manoj@gmail.com</a>
-          </p>
-        </div>
-        <div className="contact-info-container">
-          <img
-            src="/assets/linkedin.png"
-            alt="LinkedIn icon"
-            className="icon contact-icon"
-          />
-          <p>
-            <a href="https://www.linkedin.com/in/manoj-patil-1942641aa">LinkedIn</a>
-          </p>
-        </div>
-      </div>
-    </section>
-  )
+return (
+<section id="contact">
+<div className="section-heading">
+<span className="section-eyebrow">Let's talk</span>
+<h2 className="section-title">Contact Me</h2>
+</div>
+<div className="contact-card">
+<p className="contact-pitch">
+Got an idea, a role, or just want to nerd out about microservices?
+My inbox is always open.
+</p>
+<div className="contact-links">
+<a className="contact-chip" href="mailto:patil.mahesh.manoj@gmail.com">
+<img src="/assets/email.png" alt="" className="contact-chip-icon" />
+patil.mahesh.manoj@gmail.com
+</a>
+<a className="contact-chip" href="https://www.linkedin.com/in/manoj-patil-1942641aa">
+<img src="/assets/linkedin.png" alt="" className="contact-chip-icon" />
+LinkedIn
+</a>
+</div>
+</div>
+</section>
+)
 }
 
 export default Contact
